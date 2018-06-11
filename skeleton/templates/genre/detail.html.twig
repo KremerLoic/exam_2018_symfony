@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="container">
+    <h1>Detail Genre : </h1>
+    <div class="row">
+        <div class="card">
+
+            <h4>{{ genre.nom }}</h4>
+
+            //To-do ajouter films
+
+        </div>
+    </div>
+</div>
+
+<a href="{{ path('genre') }}">Retour aux genres</a>
+
+{% endblock %}

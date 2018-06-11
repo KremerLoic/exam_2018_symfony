@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block container %}
+<div class="container">
+
+     <div class="row">
+         <div class="card">
+             <img src="{{ film.affiche.imageurl }}"/>
+    <h4>Titre : {{ film.titre }}</h4>
+    <p>Résumé : {{ film.resume }}</p>
+    <p>Date de sortie : {{ film.datesortie|date('y-m-d') }}</p>
+    <p>Production : {{ film.production }}</p>
+    <p>Realisateur : {{ film.realisateur }}</p>
+
+    <h4> Acteur(s) du film : </h4>
+    {% for acteur in film.acteur %}
+             <img src="{{ acteur.imageurl }}"/>
+        <p>Nom-Prenom : {{ acteur.nom }} {{ acteur.prenom }}</p>
+        <p>Date de naissance : {{ acteur.datedenaissance }}</p>
+        <p>Date de dèces : {{ acteur.datededeces }}</p>
+
+
+
+
+    {% endfor %}
+
+    <h4> Genre du film : </h4>
+    <p>{{ film.genre.nom }}</p>
+             <a href="{{ path('film_update', {'id':film.id}) }}">Editer le film</a><br />
+             <a href="{{ path('film_delete', {'id':film.id}) }}">Supprimer le film</a><br />
+
+     </div>
+     </div>
+</div>
+
+
+    <a href="{{ path('film') }}">Retour aux films</a>
+
+
+{% endblock %}

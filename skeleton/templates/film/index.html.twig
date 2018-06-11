@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+
+{% block container %}
+    <div class="container">
+        <div class="row">
+            {% for film in films %}
+                <div class="col-md-4 card">
+                    <a href="{{ path('film_show', {'id':film.id}) }}"><h4>{{ film.titre }}</h4></a>
+                    <p>{{ film.datesortie|date('y-m-d') }}</p>
+                    <p>{{ film.production }}</p>
+                    <p>{{ film.realisateur }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+{% endblock %}

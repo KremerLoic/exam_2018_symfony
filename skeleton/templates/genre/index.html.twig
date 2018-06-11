@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+
+
+{% block container %}
+    <div class="container">
+
+<h1>Genres :</h1>
+    {% for genre in genres %}
+        <div class="col-md-4 card">
+        <a href="{{ path('genre_show',{'id':genre.id}) }}"> <h4>{{ genre.nom }}</h4></a>
+        </div>
+   {% endfor %}
+    </div>
+{% endblock %}
